@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>THE AETHERIAL GAUNTLET — Techfest 2026, IIT Bombay</title>
+<meta name="description" content="Techfest 2026, IIT Bombay — 30th Edition. Asia's Largest Science and Technology Festival. An Aetherial Renaissance. Enter the Gauntlet." />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ BOOT / TITLE SCREEN ============ -->
+<div class="boot" id="boot">
+  <div class="boot-scan"></div>
+  <div class="boot-inner">
+    <div class="crest">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="54" fill="none" stroke="#d9a94c" stroke-width="1.4" opacity=".65"/>
+        <circle cx="60" cy="60" r="44" fill="none" stroke="#d9a94c" stroke-width=".7" opacity=".38"/>
+        <path d="M60,16 L66,44 L94,44 L72,60 L80,88 L60,72 L40,88 L48,60 L26,44 L54,44 Z"
+              fill="none" stroke="#ffd98a" stroke-width="1.6"/>
+        <circle cx="60" cy="60" r="7" fill="#ffd98a" opacity=".9"/>
+      </svg>
+    </div>
+    <p class="boot-kicker">TECHFEST &middot; IIT BOMBAY &middot; 30TH EDITION</p>
+    <h1 class="boot-title">THE AETHERIAL<br/>GAUNTLET</h1>
+    <p class="boot-theme">&ldquo;An Aetherial Renaissance&rdquo;</p>
+    <button class="boot-start" id="bootStart"><span>PRESS START</span></button>
+    <p class="boot-hint">or hit <kbd>ENTER</kbd> &middot; 16&ndash;18 DEC 2026</p>
+    <div class="boot-load"><div class="boot-load-fill" id="bootLoad"></div></div>
+  </div>
+</div>
+
+<!-- ============ PERSISTENT SCENE ============ -->
+<div class="scene-wrap" id="sceneWrap">
+<svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#050409"/>
+      <stop offset="42%"  stop-color="#0d0b1e"/>
+      <stop offset="70%"  stop-color="#1d1432"/>
+      <stop offset="100%" stop-color="#2e1b38"/>
+    </linearGradient>
+    <radialGradient id="aetherGlow" cx="50%" cy="62%" r="46%">
+      <stop offset="0%"   stop-color="#ffd98a" stop-opacity=".55"/>
+      <stop offset="42%"  stop-color="#c98ce0" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#12102a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="palaceGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#f6dfae"/>
+      <stop offset="45%"  stop-color="#c99b52"/>
+      <stop offset="100%" stop-color="#5a3f22"/>
+    </linearGradient>
+    <linearGradient id="farHill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b2350"/>
+      <stop offset="100%" stop-color="#15122c"/>
+    </linearGradient>
+    <linearGradient id="nearHill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#161130"/>
+      <stop offset="100%" stop-color="#0a0818"/>
+    </linearGradient>
+    <linearGradient id="isleGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7d6bb5"/>
+      <stop offset="100%" stop-color="#2b2350"/>
+    </linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="softer"><feGaussianBlur stdDeviation="16"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#skyGrad)"/>
+  <g class="lyr" data-speed="0.10"><rect width="1600" height="900" fill="url(#aetherGlow)"/></g>
+
+  <!-- stars -->
+  <g class="lyr stars" data-speed="0.16"></g>
+
+  <!-- far floating isles -->
+  <g class="lyr" data-speed="0.24" opacity=".55" filter="url(#soft)">
+    <ellipse cx="230" cy="250" rx="120" ry="26" fill="url(#isleGrad)"/>
+    <ellipse cx="230" cy="272" rx="52" ry="34" fill="#241d42"/>
+    <ellipse cx="1340" cy="196" rx="150" ry="30" fill="url(#isleGrad)"/>
+    <ellipse cx="1340" cy="222" rx="64" ry="42" fill="#241d42"/>
+  </g>
+
+  <!-- far hills -->
+  <g class="lyr" data-speed="0.30">
+    <path d="M0,620 L180,520 L340,600 L520,470 L700,590 L900,500 L1080,600 L1280,510 L1460,600 L1600,540 L1600,900 L0,900 Z" fill="url(#farHill)" opacity=".9"/>
+  </g>
+
+  <!-- THE PALACE -->
+  <g class="lyr palace" data-speed="0.42">
+    <g transform="translate(800,600)">
+      <!-- main dome -->
+      <path d="M-150,0 C-150,-96 -84,-150 0,-150 C84,-150 150,-96 150,0 Z" fill="url(#palaceGrad)"/>
+      <rect x="-160" y="0" width="320" height="120" fill="#8a6a38"/>
+      <rect x="-160" y="0" width="320" height="120" fill="url(#palaceGrad)" opacity=".55"/>
+      <!-- spire -->
+      <path d="M0,-150 L0,-238" stroke="#f6dfae" stroke-width="5"/>
+      <circle cx="0" cy="-246" r="11" fill="#ffd98a"/>
+      <circle cx="0" cy="-246" r="24" fill="#ffd98a" opacity=".28" filter="url(#soft)"/>
+      <!-- side minarets -->
+      <g>
+        <path d="M-210,20 C-210,-30 -180,-58 -150,-58 C-120,-58 -90,-30 -90,20 Z" fill="url(#palaceGrad)"/>
+        <path d="M-150,-58 L-150,-118" stroke="#f6dfae" stroke-width="3"/>
+        <circle cx="-150" cy="-124" r="7" fill="#ffd98a"/>
+        <rect x="-214" y="20" width="128" height="100" fill="#7a5c30"/>
+        <rect x="-214" y="20" width="128" height="100" fill="url(#palaceGrad)" opacity=".5"/>
+      </g>
+      <g>
+        <path d="M90,20 C90,-30 120,-58 150,-58 C180,-58 210,-30 210,20 Z" fill="url(#palaceGrad)"/>
+        <path d="M150,-58 L150,-118" stroke="#f6dfae" stroke-width="3"/>
+        <circle cx="150" cy="-124" r="7" fill="#ffd98a"/>
+        <rect x="86" y="20" width="128" height="100" fill="#7a5c30"/>
+        <rect x="86" y="20" width="128" height="100" fill="url(#palaceGrad)" opacity=".5"/>
+      </g>
+      <!-- arches -->
+      <g fill="#1a1330" opacity=".72">
+        <path d="M-34,120 L-34,54 C-34,34 -16,22 0,22 C16,22 34,34 34,54 L34,120 Z"/>
+        <path d="M-120,120 L-120,74 C-120,60 -108,52 -98,52 C-88,52 -76,60 -76,74 L-76,120 Z"/>
+        <path d="M76,120 L76,74 C76,60 88,52 98,52 C108,52 120,60 120,74 L120,120 Z"/>
+      </g>
+      <!-- windows -->
+      <g fill="#ffd98a" opacity=".85">
+        <circle cx="-150" cy="58" r="5"/><circle cx="150" cy="58" r="5"/>
+        <circle cx="-98" cy="92" r="4"/><circle cx="98" cy="92" r="4"/>
+      </g>
+      <rect x="-170" y="120" width="340" height="10" fill="#c99b52"/>
+    </g>
+  </g>
+
+  <!-- fog behind near hills -->
+  <g class="lyr" data-speed="0.52" filter="url(#softer)" opacity=".5">
+    <ellipse cx="500" cy="700" rx="620" ry="70" fill="#8f7fd0"/>
+    <ellipse cx="1180" cy="730" rx="560" ry="60" fill="#b08fd8"/>
+  </g>
+
+  <!-- near hills -->
+  <g class="lyr" data-speed="0.62">
+    <path d="M0,760 L220,690 L430,750 L660,672 L900,742 L1130,680 L1380,748 L1600,700 L1600,900 L0,900 Z" fill="url(#nearHill)"/>
+  </g>
+
+  <!-- foreground reeds / spires -->
+  <g class="lyr" data-speed="0.86" fill="#08060f">
+    <path d="M60,900 L84,700 L108,900 Z"/>
+    <path d="M150,900 L168,760 L186,900 Z"/>
+    <path d="M1420,900 L1444,690 L1468,900 Z"/>
+    <path d="M1510,900 L1526,770 L1542,900 Z"/>
+  </g>
+</svg>
+
+  <canvas class="particles" id="particles"></canvas>
+</div>
+
+<!-- ============ HUD ============ -->
+<div class="hud" id="hud">
+  <div class="hud-left">
+    <div class="hud-avatar"><span id="classGlyph">◇</span></div>
+    <div class="hud-id">
+      <span class="hud-label">CHALLENGER</span>
+      <span class="hud-name" id="className">UNCLASSED</span>
+    </div>
+  </div>
+
+  <div class="hud-center">
+    <div class="lvl" id="lvlBadge">LV 1</div>
+    <div class="xp-wrap">
+      <div class="xp-top"><span class="hud-label">EXPERIENCE</span><span class="xp-val" id="xpVal">0 / 1000</span></div>
+      <div class="xp-track"><div class="xp-fill" id="xpFill"></div></div>
+    </div>
+  </div>
+
+  <div class="hud-right">
+    <div class="hud-stat"><span class="hud-label">GOLD</span><span class="hud-val gold" id="goldVal">₹0</span></div>
+    <div class="hud-stat"><span class="hud-label">QUESTS</span><span class="hud-val" id="questVal">0</span></div>
+    <button class="hud-btn" id="soundBtn" title="Toggle sound" aria-label="Toggle sound">♪</button>
+  </div>
+</div>
+
+<!-- ============ MINIMAP ============ -->
+<nav class="minimap" id="minimap" aria-label="Realm map">
+  <span class="mm-title">REALM</span>
+  <div class="mm-rail"><div class="mm-fill" id="mmFill"></div></div>
+  <div class="mm-nodes" id="mmNodes"></div>
+</nav>
+
+<!-- ============ TOASTS ============ -->
+<div class="toasts" id="toasts"></div>
+
+<!-- ============ MAIN ============ -->
+<main class="content">
+
+  <!-- 01 HERO -->
+  <section class="panel panel-hero" id="realm" data-name="THE REALM">
+    <div class="panel-inner">
+      <p class="kicker">ASIA&rsquo;S LARGEST SCIENCE &amp; TECHNOLOGY FESTIVAL</p>
+      <h2 class="hero-h">
+        <span class="hl">ENTER THE</span>
+        <span class="hl gild">GAUNTLET</span>
+      </h2>
+      <p class="lede">
+        Ten thousand challengers. Three hundred trials. Three days on the IIT Bombay campus.
+        Techfest returns for its thirtieth edition &mdash; an Aetherial Renaissance where
+        engineering becomes legend.
+      </p>
+      <div class="hero-meta">
+        <span class="hm"><b>16&ndash;18</b> DEC 2026</span>
+        <span class="hm-sep">◆</span>
+        <span class="hm"><b>IIT BOMBAY</b> POWAI, MUMBAI</span>
+        <span class="hm-sep">◆</span>
+        <span class="hm"><b>FREE</b> ENTRY</span>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="cd-unit"><span class="cd-num" id="cdD">--</span><span class="cd-lab">DAYS</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdH">--</span><span class="cd-lab">HRS</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdM">--</span><span class="cd-lab">MIN</span></div>
+        <div class="cd-unit"><span class="cd-num" id="cdS">--</span><span class="cd-lab">SEC</span></div>
+      </div>
+
+      <div class="class-select">
+        <p class="cs-label">CHOOSE YOUR PATH</p>
+        <div class="cs-row" id="classRow">
+<button class="cs-card" data-track="ROBOTICS"><span class="cs-glyph">⚙</span><span class="cs-name">ROBOTICS</span><span class="cs-desc">Machines that move, fight and think</span></button><button class="cs-card" data-track="AI & CODE"><span class="cs-glyph">◈</span><span class="cs-name">AI & CODE</span><span class="cs-desc">Models, agents and software craft</span></button><button class="cs-card" data-track="AEROSPACE"><span class="cs-glyph">▲</span><span class="cs-name">AEROSPACE</span><span class="cs-desc">Flight, propulsion and swarms</span></button><button class="cs-card" data-track="QUANT"><span class="cs-glyph">∑</span><span class="cs-name">QUANT</span><span class="cs-desc">Probability, markets and logic</span></button><button class="cs-card" data-track="IDEAS"><span class="cs-glyph">✧</span><span class="cs-name">IDEAS</span><span class="cs-desc">Solutions for the real world</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 QUEST BOARD -->
+  <section class="panel" id="quests" data-name="QUEST BOARD">
+    <div class="panel-inner wide">
+      <p class="kicker">CHAPTER II</p>
+      <h2 class="sec-h">THE QUEST BOARD</h2>
+      <p class="lede center">
+        Twenty-four trials stand open. Every quest below is a real Techfest 2026 competition,
+        with its real prize pool. Pick a path to filter the board.
+      </p>
+      <div class="track-filter" id="trackFilter"><button class="track-btn active" data-track="ALL"><span class="tb-glyph">✦</span><span class="tb-label">ALL PATHS</span><span class="tb-count">24</span></button><button class="track-btn" data-track="ROBOTICS"><span class="tb-glyph">⚙</span><span class="tb-label">ROBOTICS</span><span class="tb-count">5</span></button><button class="track-btn" data-track="AI & CODE"><span class="tb-glyph">◈</span><span class="tb-label">AI & CODE</span><span class="tb-count">7</span></button><button class="track-btn" data-track="AEROSPACE"><span class="tb-glyph">▲</span><span class="tb-label">AEROSPACE</span><span class="tb-count">4</span></button><button class="track-btn" data-track="QUANT"><span class="tb-glyph">∑</span><span class="tb-label">QUANT</span><span class="tb-count">3</span></button><button class="track-btn" data-track="IDEAS"><span class="tb-glyph">✧</span><span class="tb-label">IDEAS</span><span class="tb-count">5</span></button></div>
+      <div class="quest-grid" id="questGrid">
+        <article class="quest" data-track="ROBOTICS" data-rarity="legendary" data-prize="3,50,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">⚙</span><span class="quest-rarity r-legendary">LEGENDARY</span></header><h3 class="quest-name">The Wrecking Ball Challenge</h3><p class="quest-desc">Build an autonomous, battery-powered spherical robot that navigates a 75-metre obstacle arena using vision-based navigation and centre-of-gravity stabilisation.</p><footer class="quest-foot"><span class="quest-track">ROBOTICS</span><span class="quest-prize">₹3,50,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="QUANT" data-rarity="legendary" data-prize="3,80,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">∑</span><span class="quest-rarity r-legendary">LEGENDARY</span></header><h3 class="quest-name">National Probability Challenge</h3><p class="quest-desc">A national quantitative reasoning contest. A rigorous screening round, then real-time trading-floor decision challenges.</p><footer class="quest-foot"><span class="quest-track">QUANT</span><span class="quest-prize">₹3,80,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="epic" data-prize="1,50,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">Namma Space</h3><p class="quest-desc">Build an end-to-end spatial engine that turns smartphone captures of indoor spaces into interactive 3D digital twins. Top performers considered for roles at Juspay.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">₹1,50,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="ROBOTICS" data-rarity="epic" data-prize="1,50,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">⚙</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">The Urban Autonomous Mobility Challenge</h3><p class="quest-desc">Program a self-driving miniature car to navigate a full smart-city street — lanes, signals, pedestrians, parking — with zero remote control.</p><footer class="quest-foot"><span class="quest-track">ROBOTICS</span><span class="quest-prize">₹1,50,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="epic" data-prize="1,00,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">Code Auditor</h3><p class="quest-desc">Evaluate, diagnose and fix subtle defects in AI-generated codebases under time pressure while guaranteeing functional correctness.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">₹1,00,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">EV Infra & Green Mobility AI Challenge</h3><p class="quest-desc">Build AI-driven solutions mapping India's EV charging infrastructure or assessing automotive sustainability, with the Ministry of Heavy Industries.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">Perceptron Hackathon</h3><p class="quest-desc">A machine-learning hackathon pitting model design and training strategy against a live problem set.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">AI for Technology Readiness</h3><p class="quest-desc">Apply AI to accelerate technology readiness levels across real engineering domains.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="epic" data-prize="1,00,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">SparkX — National AI Challenge</h3><p class="quest-desc">A national AI challenge for builders pushing applied intelligence from prototype to product.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">₹1,00,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AI & CODE" data-rarity="rare" data-prize="80,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">◈</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">ZeroCode</h3><p class="quest-desc">Ship working software without writing the boilerplate — judged on outcome, not keystrokes.</p><footer class="quest-foot"><span class="quest-track">AI & CODE</span><span class="quest-prize">₹80,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AEROSPACE" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">▲</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">Security of Drones</h3><p class="quest-desc">Attack and defend unmanned systems. Find the weakness before someone else does.</p><footer class="quest-foot"><span class="quest-track">AEROSPACE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AEROSPACE" data-rarity="legendary" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">▲</span><span class="quest-rarity r-legendary">LEGENDARY</span></header><h3 class="quest-name">PUSHPAK GRAND CHALLENGE 2026</h3><p class="quest-desc">Techfest's flagship aerospace challenge. Design, build and fly against the best teams in the country.</p><footer class="quest-foot"><span class="quest-track">AEROSPACE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AEROSPACE" data-rarity="epic" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">▲</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">UAV-X: Resilient BVLOS Swarm Challenge</h3><p class="quest-desc">Fly resilient swarms beyond visual line of sight — comms loss, GPS denial, contested airspace.</p><footer class="quest-foot"><span class="quest-track">AEROSPACE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="AEROSPACE" data-rarity="epic" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">▲</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">CycloProp: Advanced UAV Propulsion Challenge</h3><p class="quest-desc">Push propulsion efficiency and thrust-to-weight beyond what off-the-shelf hardware allows.</p><footer class="quest-foot"><span class="quest-track">AEROSPACE</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="QUANT" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">∑</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">The Quantitative Code Conflux</h3><p class="quest-desc">Where quantitative reasoning meets code. Solve problems that reward both rigour and speed.</p><footer class="quest-foot"><span class="quest-track">QUANT</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="QUANT" data-rarity="epic" data-prize="1,00,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">∑</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">ThetaShift</h3><p class="quest-desc">A strategy and reasoning contest built around shifting probabilities and optimal decisions.</p><footer class="quest-foot"><span class="quest-track">QUANT</span><span class="quest-prize">₹1,00,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="ROBOTICS" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">⚙</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">OLL Robotics Championship</h3><p class="quest-desc">An open robotics league championship across multiple disciplines and skill levels.</p><footer class="quest-foot"><span class="quest-track">ROBOTICS</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="ROBOTICS" data-rarity="epic" data-prize="1,00,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">⚙</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">RoboReach</h3><p class="quest-desc">Reach further. A robotics challenge rewarding precision, reach and control.</p><footer class="quest-foot"><span class="quest-track">ROBOTICS</span><span class="quest-prize">₹1,00,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="ROBOTICS" data-rarity="epic" data-prize="1,00,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">⚙</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">Meshmerize</h3><p class="quest-desc">A line-following and maze-solving classic that has broken a thousand robots and a few hearts.</p><footer class="quest-foot"><span class="quest-track">ROBOTICS</span><span class="quest-prize">₹1,00,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="IDEAS" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">✧</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">LogIQids Ideathon</h3><p class="quest-desc">A structured ideathon turning raw logic into shippable concepts.</p><footer class="quest-foot"><span class="quest-track">IDEAS</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="IDEAS" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">✧</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">IDEATES</h3><p class="quest-desc">Techfest's platform for innovators and tinkerers bringing technology-driven solutions to real problems — agriculture, renewable energy, biotechnology.</p><footer class="quest-foot"><span class="quest-track">IDEAS</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="IDEAS" data-rarity="epic" data-prize="1,00,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">✧</span><span class="quest-rarity r-epic">EPIC</span></header><h3 class="quest-name">The India @71/100 Challenge</h3><p class="quest-desc">A national challenge framed around India's next hundred years of technological ambition.</p><footer class="quest-foot"><span class="quest-track">IDEAS</span><span class="quest-prize">₹1,00,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="IDEAS" data-rarity="rare" data-prize="80,000"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">✧</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">InnovateX</h3><p class="quest-desc">Open innovation, judged on novelty, feasibility and impact.</p><footer class="quest-foot"><span class="quest-track">IDEAS</span><span class="quest-prize">₹80,000</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+        <article class="quest" data-track="IDEAS" data-rarity="rare" data-prize="—"><div class="quest-glow"></div><header class="quest-head"><span class="quest-glyph">✧</span><span class="quest-rarity r-rare">RARE</span></header><h3 class="quest-name">EcoCircuit</h3><p class="quest-desc">Circular-economy engineering. Design for reuse, repair and return.</p><footer class="quest-foot"><span class="quest-track">IDEAS</span><span class="quest-prize">PRIZE TBA</span></footer><a class="quest-take" href="https://techfest.org/competitions" target="_blank" rel="noopener"><span>ACCEPT QUEST</span><span class="qt-arrow">→</span></a></article>
+      </div>
+      <p class="board-note" id="boardNote"></p>
+    </div>
+  </section>
+
+  <!-- 03 THE VAULT -->
+  <section class="panel" id="vault" data-name="THE VAULT">
+    <div class="panel-inner wide">
+      <p class="kicker">CHAPTER III</p>
+      <h2 class="sec-h">THE VAULT</h2>
+      <p class="lede center">
+        Skill scrolls, taught by industry practitioners. Complete one and you carry
+        an IIT Bombay certificate into the realm.
+      </p>
+
+      <div class="perks"><li>Professional certificate from IIT Bombay</li><li>Free access to all Techfest events</li><li>Internship opportunities & growth</li></div>
+
+      <h3 class="vault-sub">COMBO SCROLLS</h3>
+      <div class="combo-grid"><div class="combo"><div class="combo-badge">COMBO</div><h4>Agentic AI + Agentic Stack</h4><span class="combo-perk">2 certificates</span><div class="combo-price"><span class="p-now">₹3,399</span><span class="p-was">₹4,199</span></div></div><div class="combo"><div class="combo-badge">COMBO</div><h4>Agentic AI + Machine Learning</h4><span class="combo-perk">2 certificates</span><div class="combo-price"><span class="p-now">₹3,599</span><span class="p-was">₹4,399</span></div></div><div class="combo"><div class="combo-badge">COMBO</div><h4>Artificial Intelligence + Data Science</h4><span class="combo-perk">2 certificates</span><div class="combo-price"><span class="p-now">₹3,599</span><span class="p-was">₹4,499</span></div></div><div class="combo"><div class="combo-badge">COMBO</div><h4>Ethical Hacking + Cybersecurity</h4><span class="combo-perk">2 certificates</span><div class="combo-price"><span class="p-now">₹3,299</span><span class="p-was">₹4,399</span></div></div><div class="combo"><div class="combo-badge">COMBO</div><h4>Prompt Engineering + Full Stack</h4><span class="combo-perk">2 certificates</span><div class="combo-price"><span class="p-now">₹2,999</span><span class="p-was">₹4,199</span></div></div><div class="combo"><div class="combo-badge">COMBO</div><h4>Prompt Engineering + LLMs in Python</h4><span class="combo-perk">2 certificates</span><div class="combo-price"><span class="p-now">₹3,399</span><span class="p-was">₹4,399</span></div></div></div>
+
+      <h3 class="vault-sub">SINGLE SCROLLS</h3>
+      <div class="vault-grid"><div class="vault-item"><h4>Agentic Stack: A Builder's Playbook</h4><p>Build AI agents that reason, act and orchestrate multi-step workflows — then take them from prototype to production.</p><div class="combo-price"><span class="p-now">₹1,699</span><span class="p-was">₹1,999</span></div><a class="vault-link" href="https://techfest.org/workshops" target="_blank" rel="noopener">ENROL →</a></div><div class="vault-item"><h4>Machine Learning</h4><p>End-to-end ML pipelines, from statistical foundations to ensemble algorithms, deep architectures and deployment.</p><div class="combo-price"><span class="p-now">₹1,899</span><span class="p-was">₹2,199</span></div><a class="vault-link" href="https://techfest.org/workshops" target="_blank" rel="noopener">ENROL →</a></div><div class="vault-item"><h4>Artificial Intelligence</h4><p>Two days on campus across deep learning, vision, generative AI, RAG and agentic workflows.</p><div class="combo-price"><span class="p-now">₹1,999</span><span class="p-was">₹2,299</span></div><a class="vault-link" href="https://techfest.org/workshops" target="_blank" rel="noopener">ENROL →</a></div><div class="vault-item"><h4>Deep Learning</h4><p>Neural network architectures and the mechanics of training at depth.</p><div class="combo-price"><span class="p-now">TBA</span></div><a class="vault-link" href="https://techfest.org/workshops" target="_blank" rel="noopener">ENROL →</a></div></div>
+
+      <a class="big-cta" href="https://techfest.org/workshops" target="_blank" rel="noopener">
+        <span>BROWSE ALL WORKSHOPS</span><span class="cta-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 04 ZONALS -->
+  <section class="panel" id="zonals" data-name="ZONAL MAP">
+    <div class="panel-inner wide">
+      <p class="kicker">CHAPTER IV</p>
+      <h2 class="sec-h">THE ZONAL MAP</h2>
+      <p class="lede center">
+        The Gauntlet does not begin in Mumbai. Zonal rounds are fought in cities across
+        India first &mdash; win your region, and you earn your place in the final.
+      </p>
+      <div class="zonal-map" id="zonalMap"><div class="zonal host"><span class="zonal-dot"></span><span class="zonal-city">MUMBAI</span><span class="zonal-role">HOST REALM</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">PUNE</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">DELHI</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">BENGALURU</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">HYDERABAD</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">KOLKATA</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">CHENNAI</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">AHMEDABAD</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">JAIPUR</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">LUCKNOW</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">BHOPAL</span><span class="zonal-role">OUTPOST</span></div><div class="zonal"><span class="zonal-dot"></span><span class="zonal-city">GUWAHATI</span><span class="zonal-role">OUTPOST</span></div></div>
+    </div>
+  </section>
+
+  <!-- 05 GUILDS -->
+  <section class="panel" id="guilds" data-name="GUILDS">
+    <div class="panel-inner wide">
+      <p class="kicker">CHAPTER V</p>
+      <h2 class="sec-h">JOIN A GUILD</h2>
+      <p class="lede center">
+        <b>Ignite</b> is Techfest&rsquo;s initiative to accredit, support and connect
+        student-led technical bodies across India. Start a chapter at your own college.
+      </p>
+      <div class="guild-grid"><article class="guild"><div class="guild-tier">TIER I</div><h3>IGNITE CATALYST</h3><p>For emerging fest bodies, newly forming technical clubs, or institutions building a structured campus technical fest for the first time.</p><ul><li>Structured execution blueprints</li><li>Hands-on operational mentorship</li><li>Institutional setup seed funding</li></ul></article><article class="guild"><div class="guild-tier">TIER II</div><h3>IGNITE VANGUARD</h3><p>For established campus fest bodies with a proven track record of running an annual technical festival for more than three years.</p><ul><li>High-level institutional support</li><li>Pan-India network access</li><li>Official Techfest accreditation</li></ul></article></div>
+      <a class="big-cta" href="https://techfest.org/ignite" target="_blank" rel="noopener">
+        <span>EXPLORE IGNITE</span><span class="cta-arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 06 HALL OF LEGENDS -->
+  <section class="panel" id="legends" data-name="HALL OF LEGENDS">
+    <div class="panel-inner wide">
+      <p class="kicker">CHAPTER VI</p>
+      <h2 class="sec-h">HALL OF LEGENDS</h2>
+      <p class="lede center">Those who have stood on Techfest&rsquo;s stage before you.</p>
+      <div class="legend-grid"><div class="legend"><span class="legend-mark">✦</span><span class="legend-name">Dr. A.P.J. Abdul Kalam</span><span class="legend-role">President of India</span></div><div class="legend"><span class="legend-mark">✦</span><span class="legend-name">Jimmy Wales</span><span class="legend-role">Founder, Wikipedia</span></div><div class="legend"><span class="legend-mark">✦</span><span class="legend-name">Amartya Sen</span><span class="legend-role">Nobel Laureate, Economics</span></div><div class="legend"><span class="legend-mark">✦</span><span class="legend-name">Dr. Rakesh Sharma</span><span class="legend-role">First Indian in space</span></div></div>
+    </div>
+  </section>
+
+  <!-- 07 THE LEDGER -->
+  <section class="panel" id="ledger" data-name="THE LEDGER">
+    <div class="panel-inner wide">
+      <p class="kicker">CHAPTER VII</p>
+      <h2 class="sec-h">THE LEDGER</h2>
+      <p class="lede center">The Gauntlet, by the numbers.</p>
+      <div class="stat-grid"><div class="stat"><span class="stat-val" data-val="1,75,000+">1,75,000+</span><span class="stat-key">FOOTFALL</span><span class="stat-sub">souls through the gates</span></div><div class="stat"><span class="stat-val" data-val="2,500+">2,500+</span><span class="stat-key">INDIAN COLLEGES</span><span class="stat-sub">reached nationwide</span></div><div class="stat"><span class="stat-val" data-val="500+">500+</span><span class="stat-key">GLOBAL COLLEGES</span><span class="stat-sub">from across the world</span></div><div class="stat"><span class="stat-val" data-val="300+">300+</span><span class="stat-key">EVENTS</span><span class="stat-sub">quests, trials and shows</span></div><div class="stat"><span class="stat-val" data-val="2.8M">2.8M</span><span class="stat-key">FACEBOOK FOLLOWERS</span><span class="stat-sub">the realm's reach</span></div><div class="stat"><span class="stat-val" data-val="30">30</span><span class="stat-key">EDITIONS</span><span class="stat-sub">years of the Gauntlet</span></div></div>
+    </div>
+  </section>
+
+  <!-- 08 ENLIST -->
+  <section class="panel panel-enlist" id="enlist" data-name="ENLIST">
+    <div class="panel-inner">
+      <p class="kicker">FINAL CHAPTER</p>
+      <h2 class="hero-h">
+        <span class="hl">YOUR QUEST</span>
+        <span class="hl gild">BEGINS NOW</span>
+      </h2>
+      <p class="lede center">
+        Registration for Techfest 2026 is open. Entry to the campus is free and open to all.
+        Pick a quest, claim your scroll, and we will see you in December.
+      </p>
+      <div class="enlist-row">
+        <a class="big-cta solid" href="https://techfest.org/competitions" target="_blank" rel="noopener">
+          <span>REGISTER FOR COMPETITIONS</span><span class="cta-arrow">→</span>
+        </a>
+        <a class="big-cta" href="https://techfest.org" target="_blank" rel="noopener">
+          <span>VISIT TECHFEST.ORG</span>
+        </a>
+      </div>
+      <p class="enlist-note">Accommodation on campus is available from 15 December. Early-bird pricing applies to workshops.</p>
+    </div>
+  </section>
+
+  <footer class="foot" id="foot">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <span class="foot-logo">TECHFEST<span class="foot-accent">&rsquo;26</span></span>
+        <p>30th Edition &middot; An Aetherial Renaissance<br/>IIT Bombay, Powai, Mumbai &middot; 16&ndash;18 December 2026</p>
+      </div>
+      <div class="foot-links">
+        <a href="https://techfest.org/competitions" target="_blank" rel="noopener">Competitions</a>
+        <a href="https://techfest.org/workshops" target="_blank" rel="noopener">Workshops</a>
+        <a href="https://techfest.org/ignite" target="_blank" rel="noopener">Ignite</a>
+        <a href="https://techfest.org/accommodation" target="_blank" rel="noopener">Accommodation</a>
+        <a href="https://techfest.org/contactus" target="_blank" rel="noopener">Contact</a>
+      </div>
+      <p class="foot-note">
+        An unofficial concept landing page for Techfest, IIT Bombay, built for the
+        Campus Ambassador programme. All event details, prize pools and figures are
+        sourced from techfest.org and the official Techfest channels.
+      </p>
+    </div>
+  </footer>
+
+</main>
+
+<button class="replay" id="replayBtn" title="Back to start">↺ RESTART</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
